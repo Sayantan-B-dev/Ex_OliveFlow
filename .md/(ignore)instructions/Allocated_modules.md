@@ -97,12 +97,5 @@
 | 48      | SOURAV RAY              | D232419356       | Model Development             |
 | 49      | SANJIB PANDA            | D232419447       | Controller Development        |
 | 50      | DEVSEMA MOZUMDER        | D232419453       | Integration                   |
-
----
-
-### Additional Students (Not assigned to a module phase)
-
-| Sl. No. | Student Name      | Registration No. | Topics |
-|---------|-------------------|------------------|--------|
-| 51      | RUBINA KHATUN     | D232419460       |        |
-| 52      | SHUBHADIP ROY     | D222316298       |        |
+| 51      | RUBINA KHATUN           | D232419460       | Integration                   |
+| 52      | SHUBHADIP ROY           | D222316298       | Integration                   |
