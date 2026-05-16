@@ -77,7 +77,7 @@ Ensure you have **XAMPP** installed and both **Apache** and **MySQL** are runnin
 
 ### Step 4 — Visit the Application
 Once the database is imported and the `.env` is configured, you can access the project:
-**URL:** `http://localhost/Ex_StudentERP`
+**URL:** `http://localhost/Ex_OliveFlow`
 
 ### Step 5 — Default Login Credentials
 Use the following credentials to access the Admin Dashboard:
@@ -99,7 +99,7 @@ Currently, the app expects to be inside a folder named `studentErpFin`. If you r
 1. Open the file: `config/config.php`
 2. Find this line:
    ```php
-   define('BASE_URL', 'http://localhost/Ex_StudentERP');
+   define('BASE_URL', 'http://localhost/Ex_OliveFlow');
    ```
 3. Change it to your new path or live domain:
    ```php

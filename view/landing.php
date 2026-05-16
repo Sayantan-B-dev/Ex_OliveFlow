@@ -85,12 +85,7 @@
                 Don't have an account? <a href="view/auth/register.php" class="text-olive fw-bold text-decoration-none">Register Now</a>
             </div>
         </form>
-        <hr class="my-4">
-        <div class="demo-hint">
-            <div class="fw-semibold mb-2"><i class="bi bi-info-circle me-1 text-primary"></i>Demo Credentials</div>
-            <div>Email: <code>admin@college.edu</code></div>
-            <div>Password: <code>admin123</code></div>
-        </div>
+
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
