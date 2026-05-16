@@ -1,5 +1,12 @@
 # Student ERP System — Complete Setup & Documentation
 
+**Live Deployment:** [https://oliveflow.gt.tc/](https://oliveflow.gt.tc/)
+
+
+
+
+
+
 > **Project:** Student ERP (Enterprise Resource Planning for Educational Institutions)  
 > **Version:** 1.0.0  
 > **Stack:** PHP 8+, MySQL, Bootstrap 5, Chart.js, Bootstrap Icons  
