@@ -39,9 +39,9 @@ $faculty_pages     = ['faculty','staff-add','staff-edit','staff-view','staff-cat
 <!-- ── TOP NAVBAR ── -->
 <nav class="topbar">
     <!-- Sidebar toggle (Mobile Only) -->
-    <!-- <button id="sidebar-toggle-mobile" class="d-md-none" title="Toggle Sidebar" style="background:none;border:none;color:#fff;font-size:1.35rem;cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.3s ease;">
+    <button id="sidebar-toggle-mobile" class="d-md-none" title="Toggle Sidebar" style="background:none;border:none;color:#fff;font-size:1.35rem;cursor:pointer;padding:4px 8px;border-radius:6px;transition:all 0.3s ease;">
         <i class="bi bi-list"></i>
-    </button> -->
+    </button>
 
     <!-- Brand -->
     <a class="topbar-brand" href="<?php echo $B; ?>/index.php?page=dashboard">

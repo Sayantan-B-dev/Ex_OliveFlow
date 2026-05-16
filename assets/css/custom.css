@@ -197,37 +197,39 @@ body {
     height: calc(100vh - var(--topbar-h));
 }
 
-#sidebar.collapsed {
-    width: 65px;
-    min-width: 65px;
-}
-
 .sidebar-inner {
     width: var(--sidebar-w);
     padding: 16px 0 0 0;
     transition: width .3s ease;
 }
 
-#sidebar.collapsed .sidebar-inner {
-    width: 65px;
-}
+@media (min-width: 769px) {
+    #sidebar.collapsed {
+        width: 65px;
+        min-width: 65px;
+    }
 
-#sidebar.collapsed .sidebar-section {
-    color: transparent;
-    height: 0;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
+    #sidebar.collapsed .sidebar-inner {
+        width: 65px;
+    }
 
-#sidebar.collapsed .sidebar-nav li a {
-    color: transparent;
-}
-#sidebar.collapsed .sidebar-nav li a i {
-    color: rgba(255,255,255,.72);
-}
-#sidebar.collapsed .sidebar-nav li.active > a i {
-    color: #fff;
+    #sidebar.collapsed .sidebar-section {
+        color: transparent;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    #sidebar.collapsed .sidebar-nav li a {
+        color: transparent;
+    }
+    #sidebar.collapsed .sidebar-nav li a i {
+        color: rgba(255,255,255,.72);
+    }
+    #sidebar.collapsed .sidebar-nav li.active > a i {
+        color: #fff;
+    }
 }
 
 .sidebar-section {
@@ -422,8 +424,22 @@ canvas { max-height: 280px; width: 100% !important; }
 }
 
 /* Scrollbar */
-#sidebar::-webkit-scrollbar { width: 4px; }
-#sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.12); border-radius: 4px; }
+.sidebar-nav-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar-nav-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sidebar-nav-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+}
+.sidebar-nav-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
 
 /* Success flash / Toast style */
 .flash-msg {

@@ -42,10 +42,9 @@ function inPageGroup(array $pages, string $current): bool {
 
             <?php 
             $role = $_SESSION['user_role'] ?? 'faculty';
-            if (inPageGroup($monitoring_pages, $current_page)): 
             ?>
-                <!-- Academic Monitoring Group -->
-                <div class="sidebar-section">Academic</div>
+            <!-- Academic Monitoring Group -->
+            <div class="sidebar-section">Academic</div>
                 <ul class="sidebar-nav">
                     <li class="<?php echo isActive('student-information', $current_page); ?>"><a href="<?php echo $B; ?>/index.php?page=student-information"><i class="bi bi-person-lines-fill"></i> Students (SIM)</a></li>
                     <li class="<?php echo isActive('attendance-tracking', $current_page); ?>"><a href="<?php echo $B; ?>/index.php?page=attendance-tracking"><i class="bi bi-calendar-check"></i> Attendance</a></li>
@@ -58,9 +57,8 @@ function inPageGroup(array $pages, string $current): bool {
                     <li class="<?php echo isActive('parent-portal', $current_page); ?>"><a href="<?php echo $B; ?>/index.php?page=parent-portal"><i class="bi bi-people"></i> Parent Portal</a></li>
                     <li class="<?php echo isActive('analytics', $current_page); ?>"><a href="<?php echo $B; ?>/index.php?page=analytics"><i class="bi bi-graph-up-arrow"></i> Analytics</a></li>
                 </ul>
-            <?php endif; ?>
 
-            <?php if ($role === 'admin' && inPageGroup($institutes_pages, $current_page)): ?>
+            <?php if ($role === 'admin'): ?>
                 <div class="sidebar-section">Institution</div>
                 <ul class="sidebar-nav">
                     <li class="<?php echo isActive('institutes', $current_page); ?>"><a href="<?php echo $B; ?>/index.php?page=institutes"><i class="bi bi-building"></i> Institutes</a></li>
@@ -70,7 +68,7 @@ function inPageGroup(array $pages, string $current): bool {
                 </ul>
             <?php endif; ?>
 
-            <?php if (($role === 'admin' || $role === 'faculty') && inPageGroup($programs_pages, $current_page)): ?>
+            <?php if ($role === 'admin' || $role === 'faculty'): ?>
                 <div class="sidebar-section">Programs</div>
                 <ul class="sidebar-nav">
                     <li class="<?php echo isActive('academic-programs', $current_page); ?>"><a href="<?php echo $B; ?>/index.php?page=academic-programs"><i class="bi bi-mortarboard"></i> Programs</a></li>
@@ -80,7 +78,7 @@ function inPageGroup(array $pages, string $current): bool {
                 </ul>
             <?php endif; ?>
 
-            <?php if ($role === 'admin' && inPageGroup($faculty_pages, $current_page)): ?>
+            <?php if ($role === 'admin'): ?>
                 <div class="sidebar-section">Staff</div>
                 <ul class="sidebar-nav">
                     <li class="<?php echo isActive('faculty', $current_page); ?>"><a href="<?php echo $B; ?>/index.php?page=faculty"><i class="bi bi-person-badge"></i> All Staff</a></li>
