@@ -2,6 +2,16 @@
 // config/config.php
 // Database configuration
 /**
+ * Helper to get environment variables securely
+ */
+function env($key, $default = null) {
+    if (isset($_ENV[$key])) return $_ENV[$key];
+    if (isset($_SERVER[$key])) return $_SERVER[$key];
+    $val = getenv($key);
+    return $val !== false ? $val : $default;
+}
+
+/**
  * Simple .env loader to handle environment variables without Composer
  */
 function loadEnv($path) {
@@ -26,13 +36,13 @@ function loadEnv($path) {
 loadEnv(__DIR__ . '/../.env');
 
 // Database configuration
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
-define('DB_NAME', getenv('DB_NAME') ?: 'college_db');
+define('DB_HOST', env('DB_HOST'));
+define('DB_USER', env('DB_USER'));
+define('DB_PASS', env('DB_PASS'));
+define('DB_NAME', env('DB_NAME'));
 
 // Base URL (adjust if needed)
-define('BASE_URL', getenv('BASE_URL') ?: 'http://localhost/Ex_OliveFlow');
+define('BASE_URL', env('BASE_URL'));
 
 // Start session if not already started
 if (session_status() == PHP_SESSION_NONE) {

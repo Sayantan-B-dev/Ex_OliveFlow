@@ -74,7 +74,7 @@ if ($action === 'register' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: '.BASE_URL.'/view/auth/register.php'); exit;
     }
 
-    $masterEmail = getenv('MASTER_EMAIL');
+    $masterEmail = env('MASTER_EMAIL');
     if (!$masterEmail) {
         $_SESSION['reg_error'] = "System error: Master email not configured in .env.";
         header('Location: '.BASE_URL.'/view/auth/register.php'); exit;
@@ -132,17 +132,17 @@ if ($action === 'register' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
     try {
-        if (getenv('SMTP_HOST')) {
+        if (env('SMTP_HOST')) {
             $mail->isSMTP();
-            $mail->Host       = getenv('SMTP_HOST');
+            $mail->Host       = env('SMTP_HOST');
             $mail->SMTPAuth   = true;
-            $mail->Username   = getenv('SMTP_USER');
-            $mail->Password   = getenv('SMTP_PASS');
-            $mail->SMTPSecure = getenv('SMTP_SECURE') ?: \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port       = getenv('SMTP_PORT') ?: 465;
+            $mail->Username   = env('SMTP_USER');
+            $mail->Password   = env('SMTP_PASS');
+            $mail->SMTPSecure = env('SMTP_SECURE') ?: \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = env('SMTP_PORT') ?: 465;
         }
 
-        $mail->setFrom(getenv('SMTP_USER') ?: 'no-reply@studenterp.com', 'Student ERP Admin');
+        $mail->setFrom(env('SMTP_USER') ?: 'no-reply@studenterp.com', 'Student ERP Admin');
         $mail->addAddress($masterEmail);
         $mail->Subject = $subject;
         $mail->isHTML(true);
